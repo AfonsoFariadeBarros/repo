@@ -293,6 +293,7 @@
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.Name = "Form10";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form10";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

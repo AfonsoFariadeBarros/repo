@@ -64,6 +64,7 @@ namespace programacaofinalprojecto
             if (textBox2.Text != "" || txt_utilizador.Text != "")
             {
                 user.atualizardados(textBox2.Text, txt_utilizador.Text);
+                MessageBox.Show("Atualizado com Sucesso!", "Conta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

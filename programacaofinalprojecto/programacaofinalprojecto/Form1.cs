@@ -238,6 +238,7 @@ namespace programacaofinalprojecto
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cuidad...BOOM!";
             this.pnl_lateral.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -246,6 +247,7 @@ namespace programacaofinalprojecto
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private void Button3_Click_1(object sender, EventArgs e)

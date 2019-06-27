@@ -65,3 +65,6 @@ C:\Users\PSI17F01\Desktop\programacaofinalprojecto\programacaofinalprojecto\bin\
 C:\Users\PSI17F01\Desktop\programacaofinalprojecto\programacaofinalprojecto\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\PSI17F01\Desktop\programacaofinalprojecto\programacaofinalprojecto\bin\Debug\MySql.Data.xml
 C:\Users\Sai do meu PC!!!\Desktop\programacaofinalprojecto\programacaofinalprojecto\bin\Debug\Google.Protobuf.xml
+C:\Users\PSI17F01\Desktop\repo-master (1)\repo-master\programacaofinalprojecto\programacaofinalprojecto\obj\Debug\programacaofinalprojecto.csprojAssemblyReference.cache
+C:\Users\PSI17F01\Desktop\repo-master (1)\repo-master\programacaofinalprojecto\programacaofinalprojecto\obj\Debug\programacaofinalprojecto.exe
+C:\Users\PSI17F01\Desktop\repo-master (1)\repo-master\programacaofinalprojecto\programacaofinalprojecto\obj\Debug\programacaofinalprojecto.pdb

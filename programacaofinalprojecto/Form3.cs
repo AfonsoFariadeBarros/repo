@@ -24,58 +24,63 @@ namespace programacaofinalprojecto
             //Create a new user
             SqlConnection con = new SqlConnection(Properties.Settings.Default.Connection);
 
-            try
+            if (txt_utilizador.Text == "" || textBox1.Text == "" || textBox2.Text == "" || txt_utilizador.Text == "Digite o nome de utilizador" || textBox1.Text == "Digite a password desejada" || textBox2.Text == "Digite o seu email")
             {
-                con.Open();
-
-                SqlDataReader dr;
-                string Queryselect = ("SELECT IDUtilizador, Nome, Email FROM utilizador WHERE Nome = @Utilizador OR Email = @Email");
-                SqlCommand Commandselect = new SqlCommand(Queryselect, con);
-
-                Commandselect.Parameters.AddWithValue("@utilizador", txt_utilizador.Text);
-                Commandselect.Parameters.AddWithValue("@email", textBox2.Text);
-
-                dr = Commandselect.ExecuteReader();
-
-                if (dr.Read())
-                {
-                    MessageBox.Show("Utilizador ou Email já usados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dr.Close();
-                }
-                else
-                {
-                    dr.Close();
-                    string QueryInsert = "INSERT INTO utilizador (Email, nome, pass) VALUES (@email, @username, @password)";
-
-                    SqlCommand Command = new SqlCommand(QueryInsert, con);
-                    Command.Parameters.AddWithValue("@email", textBox2.Text);
-                    Command.Parameters.AddWithValue("@username", txt_utilizador.Text);
-                    Command.Parameters.AddWithValue("@password", textBox1.Text);
-                    Command.ExecuteNonQuery();
-
-
-                    //Open the connection
-
-
-                    //Execute  the query
-                    MessageBox.Show("Conta Criada");
-                    Form2 LogIN = new Form2();
-                    this.Hide();
-                    LogIN.ShowDialog();
-                    this.Dispose();
-                }
-                
+                MessageBox.Show("Campos não preenchidos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch(Exception x)
+            else
             {
-                MessageBox.Show(x.ToString());
-            }
-            finally {
-                con.Close();
-            }
-            
+                try
+                {
+                    con.Open();
 
-            //Close the connection
+                    SqlDataReader dr;
+                    string Queryselect = ("SELECT IDUtilizador, Nome, Email FROM utilizador WHERE Nome = @Utilizador OR Email = @Email");
+                    SqlCommand Commandselect = new SqlCommand(Queryselect, con);
+
+                    Commandselect.Parameters.AddWithValue("@utilizador", txt_utilizador.Text);
+                    Commandselect.Parameters.AddWithValue("@email", textBox2.Text);
+
+                    dr = Commandselect.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        MessageBox.Show("Utilizador ou Email já usados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dr.Close();
+                    }
+                    else
+                    {
+                        dr.Close();
+                        string QueryInsert = "INSERT INTO utilizador (Email, nome, pass) VALUES (@email, @username, @password)";
+
+                        SqlCommand Command = new SqlCommand(QueryInsert, con);
+                        Command.Parameters.AddWithValue("@email", textBox2.Text);
+                        Command.Parameters.AddWithValue("@username", txt_utilizador.Text);
+                        Command.Parameters.AddWithValue("@password", textBox1.Text);
+                        Command.ExecuteNonQuery();
+
+
+                        //Open the connection
+
+
+                        //Execute  the query
+                        MessageBox.Show("Conta Criada");
+                        Form2 LogIN = new Form2();
+                        this.Hide();
+                        LogIN.ShowDialog();
+                        this.Dispose();
+                    }
+
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         private void Button2_Click(object sender, EventArgs e)

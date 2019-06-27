@@ -138,7 +138,7 @@ namespace programacaofinalprojecto
                     {
                         pontosAadicionar += (int)(pontosApostados * pontosNumBombas());
                         textBox3.Text =""+pontosAadicionar;
-                        bs.button.BackgroundImage = Image.FromFile("C:\\Users\\Sai do meu PC!!!\\Desktop\\programacaofinalprojecto\\check.png");
+                        bs.button.BackgroundImage = Image.FromFile("C:\\Users\\PSI17F01\\Desktop\\repo-master (1)\\repo-master\\check.png");
                         bs.button.BackgroundImageLayout = ImageLayout.Stretch;
                     }
                 }
@@ -150,11 +150,11 @@ namespace programacaofinalprojecto
             switch (NumeroDeBombas)
             {
                 case 1:
-                    return 0.02;
+                    return 2;
                 case 3:
-                    return 0.08;
+                    return 3;
                 case 5:
-                    return 0.2;
+                    return 4;
                 case 24:
                     return 24;
                 default:

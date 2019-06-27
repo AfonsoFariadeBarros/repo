@@ -40,8 +40,9 @@ namespace programacaofinalprojecto
             if (NumeroDePontosApostados <= user.pontos)
             {
                 Form7 Bombas = new Form7(NumeroDeBombas, NumeroDePontosApostados);
-                Bombas.ShowDialog();
-                this.Hide();
+               this.Hide();
+               Bombas.ShowDialog();
+                
                 this.Dispose();
             }
             else
